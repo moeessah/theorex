@@ -1,18 +1,21 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="dark" data-hero="video">
  <head>
-  <script>(function(){try{var s=localStorage.getItem('theorex-theme');var l=!s&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches;document.documentElement.dataset.theme=(s||(l?'light':'dark'));}catch(e){}})();</script>
+  <script>(function(){try{var d=document.documentElement,s=localStorage.getItem('theorex-theme'),h=localStorage.getItem('theorex-hero'),l=!s&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches;d.dataset.theme=s||(l?'light':'dark');d.dataset.hero=h||'video';}catch(e){}})();</script>
   <meta charset="utf-8"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
   <title>
    Theorex · Research management for mathematicians
   </title>
   <meta content="Theorex provides dedicated research managers for mathematicians. They organise collaborators, specialist expertise and technical work around mathematical research." name="description"/>
+  <link href="https://api.fontshare.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317171c'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-weight='700' font-size='34' fill='%23ffffff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" rel="icon"/>
   <style>
-   @import url("https://api.fontshare.com/v2/css?f[]=satoshi@500,600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
-:root{--ink:#17171c;--paper:#f5f2e9;--paper2:#ebe8de;--white:#f8f7f2;--sage:#cbd0bb;--lime:#dcff43;--accent-blue:#152d75;--muted:#77766f;--line:rgba(23,23,28,.15);--darkline:rgba(248,247,242,.18);--display:"Satoshi",Arial,sans-serif;--body:"Archivo",Arial,sans-serif;--mono:"IBM Plex Mono",monospace;--ease:cubic-bezier(.16,1,.3,1);--gutter:clamp(22px,3vw,48px);--max:1500px}
+   :root{--ink:#17171c;--paper:#f5f2e9;--paper2:#ebe8de;--white:#f8f7f2;--sage:#cbd0bb;--lime:#dcff43;--accent-blue:#152d75;--muted:#77766f;--line:rgba(23,23,28,.15);--darkline:rgba(248,247,242,.18);--display:"Satoshi",Arial,sans-serif;--body:"Archivo",Arial,sans-serif;--mono:"IBM Plex Mono",monospace;--ease:cubic-bezier(.16,1,.3,1);--gutter:clamp(22px,3vw,48px);--max:1500px}
 *{box-sizing:border-box}
 /* shared left-to-right lime fill on hover - used by the nav CTA */.fill-hover{position:relative;overflow:hidden}.fill-hover:after{content:"";position:absolute;inset:0;background:var(--lime);transform:scaleX(0);transform-origin:left;z-index:0;transition:transform .4s var(--ease)}.fill-hover:hover:after{transform:scaleX(1)}
 html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);overflow-x:hidden}body:after{content:"";position:fixed;inset:0;z-index:39;pointer-events:none;opacity:.035;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:var(--display);font-weight:500;font-style:normal}h1 em,h2 em,h3 em{font-style:normal}p strong{font-weight:600}.container{width:min(calc(100% - var(--gutter)*2),var(--max));margin:auto}.mono{font:500 9px/1.2 var(--mono);letter-spacing:.13em;text-transform:uppercase}.eyebrow{color:var(--muted)}.eyebrow strong{color:var(--ink);font-weight:500}.dark .eyebrow strong,.bg-dark .eyebrow strong{color:var(--white)}.bg-dark .eyebrow{color:#92928b}::selection{background:var(--lime);color:var(--ink)}
@@ -35,7 +38,7 @@ body.glass-hover{cursor:grab}body.glass-dragging,body.glass-dragging *{cursor:gr
 @keyframes thesisGlassDrift{to{transform:translate(calc(-50% + 30px),calc(-50% - 20px)) rotate(1.2deg)}}
 .shift,.human,.programme,.people,.start{position:relative;overflow:hidden}
 /* final frontend pass - restrained motion and clearer controls */
-.carousel-arrow svg,.carousel-play svg,.pill-newsletter-submit svg{width:15px;height:15px;display:block;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.carousel-play .icon-play{display:none}.carousel-play.is-paused .icon-pause{display:none}.carousel-play.is-paused .icon-play{display:block}
+.carousel-arrow svg,.carousel-play svg,.pill-contact-submit svg{width:15px;height:15px;display:block;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.carousel-play .icon-play{display:none}.carousel-play.is-paused .icon-pause{display:none}.carousel-play.is-paused .icon-play{display:block}
 .pill{transform:translateY(0);transition:border-color .35s var(--ease),color .3s var(--ease),box-shadow .35s var(--ease),transform .35s var(--ease)}.pill:hover{transform:translateY(-2px)}
 .slide.active .slide-copy h3{animation:copySettle .7s var(--ease) both}@keyframes copySettle{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .people-card{transition:transform .55s var(--ease),box-shadow .55s var(--ease)}.people-card:hover{transform:translateY(-4px);box-shadow:0 28px 60px -42px rgba(0,0,0,.55)}
@@ -122,12 +125,12 @@ html[data-theme="light"] .people-card[data-tone="accent"]{background:var(--accen
 html[data-theme="light"] .people-card[data-tone="sage"]{background:var(--sage);color:var(--ink)}
 html[data-theme="light"] .people-card[data-tone="paper"]{background:#e4e8ec;color:var(--ink)}
 html[data-theme="light"] .start-sub{color:#51514c}
-html[data-theme="light"] .pill-newsletter{background:var(--accent-blue);color:var(--white)}
-html[data-theme="light"] .pill-newsletter-reveal{background:var(--accent-blue)}
-html[data-theme="light"] .pill-newsletter-input{border-bottom-color:rgba(255,255,255,.35);color:var(--white)}
-html[data-theme="light"] .pill-newsletter-input::placeholder{color:rgba(255,255,255,.5)}
-html[data-theme="light"] .pill-newsletter-input:focus{border-bottom-color:var(--white)}
-html[data-theme="light"] .pill-newsletter-submit{color:var(--white)}
+html[data-theme="light"] .pill-contact{background:var(--accent-blue);color:var(--white)}
+html[data-theme="light"] .pill-contact-reveal{background:var(--accent-blue)}
+html[data-theme="light"] .pill-contact-input{border-bottom-color:rgba(255,255,255,.35);color:var(--white)}
+html[data-theme="light"] .pill-contact-input::placeholder{color:rgba(255,255,255,.5)}
+html[data-theme="light"] .pill-contact-input:focus{border-bottom-color:var(--white)}
+html[data-theme="light"] .pill-contact-submit{color:var(--white)}
 html[data-theme="light"] footer{background:var(--ink);color:var(--white)}
 html[data-theme="light"] .footer-col .label{color:#92928d}
 html[data-theme="light"] .footer-bottom{color:#979aa0}
@@ -189,7 +192,7 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
 .people-card:hover .people-detail{margin-top:14px;font-size:9px;letter-spacing:.08em;text-transform:uppercase;opacity:.55}
 .people-photo{position:relative;overflow:hidden;background:#29292e;isolation:isolate}
 .people-photo img{width:100%;height:100%;object-fit:cover;filter:url(#theorex-duotone);opacity:1;transform:scale(var(--photo-scale,1));transform-origin:center;transition:transform .55s var(--ease);backface-visibility:hidden;-webkit-backface-visibility:hidden;will-change:transform}.people-photo .people-color{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:none;pointer-events:none;opacity:0;transform:scale(var(--photo-scale,1));transform-origin:center;mask-image:radial-gradient(ellipse 108px 132px at var(--spot-x,50%) var(--spot-y,50%),#000 0%,#000 48%,rgba(0,0,0,.92) 62%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 108px 132px at var(--spot-x,50%) var(--spot-y,50%),#000 0%,#000 48%,rgba(0,0,0,.92) 62%,transparent 100%);mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;transition:opacity .18s ease,transform .55s var(--ease)}.people-photo:hover{--photo-scale:1.045}.people-photo.is-loupe .people-color{opacity:1}
-/* start */.start{min-height:70vh;padding:15vh 0 30vh;display:flex;align-items:center;justify-content:center;text-align:center}.start-center{display:flex;flex-direction:column;align-items:center;max-width:760px;margin:0 auto}.start h2{margin-top:20px;font-size:clamp(35px,5.7vw,89px);line-height:.83;letter-spacing:-.065em}.start-sub{max-width:520px;margin:26px auto 0;color:#62615b;font-size:16px;line-height:1.65}.start-actions{margin-top:34px;display:flex;align-items:center;gap:14px}.pill-newsletter{position:relative;display:inline-flex;align-items:center;background:var(--lime);border-radius:999px;padding:12px 20px;font:500 9px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin:0}.pill-newsletter-reveal{position:absolute;top:0;bottom:0;left:calc(100% - 20px);display:flex;align-items:center;gap:10px;white-space:nowrap;max-width:0;overflow:hidden;background:var(--lime);border-radius:0 999px 999px 0;transition:max-width .45s var(--ease),padding .45s var(--ease);padding:0}.pill-newsletter:hover .pill-newsletter-reveal,.pill-newsletter:focus-within .pill-newsletter-reveal{max-width:300px;padding:0 16px 0 26px}.pill-newsletter-input{width:190px;border:0;border-bottom:1px solid rgba(23,23,28,.35);background:transparent;padding:0 0 2px;font:500 10px/1 var(--mono);letter-spacing:.03em;text-transform:none;color:var(--ink);outline:0;transition:border-color .3s var(--ease)}.pill-newsletter-input::placeholder{color:rgba(23,23,28,.45)}.pill-newsletter-input:focus{border-bottom-color:var(--ink)}.pill-newsletter-submit{flex:0 0 auto;border:0;background:none;color:var(--ink);font-size:13px;line-height:1;cursor:pointer;opacity:.7;transition:opacity .2s var(--ease),transform .2s var(--ease)}.pill-newsletter-submit:hover{opacity:1;transform:translateX(2px)}
+/* start */.start{min-height:70vh;padding:15vh 0 30vh;display:flex;align-items:center;justify-content:center;text-align:center}.start-center{display:flex;flex-direction:column;align-items:center;max-width:760px;margin:0 auto}.start h2{margin-top:20px;font-size:clamp(35px,5.7vw,89px);line-height:.83;letter-spacing:-.065em}.start-sub{max-width:520px;margin:26px auto 0;color:#62615b;font-size:16px;line-height:1.65}.start-actions{margin-top:34px;display:flex;align-items:center;gap:14px}.pill-contact{position:relative;display:inline-flex;align-items:center;background:var(--lime);border-radius:999px;padding:12px 20px;font:500 9px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);margin:0}.pill-contact-reveal{position:absolute;top:0;bottom:0;left:calc(100% - 20px);display:flex;align-items:center;gap:10px;white-space:nowrap;max-width:0;overflow:hidden;background:var(--lime);border-radius:0 999px 999px 0;transition:max-width .45s var(--ease),padding .45s var(--ease);padding:0}.pill-contact:hover .pill-contact-reveal,.pill-contact:focus-within .pill-contact-reveal{max-width:300px;padding:0 16px 0 26px}.pill-contact-input{width:190px;border:0;border-bottom:1px solid rgba(23,23,28,.35);background:transparent;padding:0 0 2px;font:500 10px/1 var(--mono);letter-spacing:.03em;text-transform:none;color:var(--ink);outline:0;transition:border-color .3s var(--ease)}.pill-contact-input::placeholder{color:rgba(23,23,28,.45)}.pill-contact-input:focus{border-bottom-color:var(--ink)}.pill-contact-submit{flex:0 0 auto;border:0;background:none;color:var(--ink);font-size:13px;line-height:1;cursor:pointer;opacity:.7;transition:opacity .2s var(--ease),transform .2s var(--ease)}.pill-contact-submit:hover{opacity:1;transform:translateX(2px)}
 /* footer */footer{background:var(--ink);color:var(--white);padding:65px var(--gutter) 50px}.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7vw}.footer-col{display:flex;flex-direction:column;gap:10px}.footer-col .label{color:#77776f}.footer-col a{font-size:12px;color:#c6c6bf;transition:color .2s}.footer-col a:hover{color:var(--white)}.footer-mark{display:flex;justify-content:space-between;align-items:center;width:100%;padding:min(14vh,150px) 0 min(14vh,150px)}.footer-mark span{font:500 clamp(48px,11vw,160px)/1 var(--mono);color:#c6c6bf}.footer-bottom{border-top:1px solid var(--darkline);padding-top:15px;display:flex;justify-content:space-between;color:#77776f}
 @media(max-width:900px){.nav{display:none}.controls-shell{margin-right:14px}.header-cta{display:none}.hero-top{top:48px;left:var(--gutter);align-items:flex-start;text-align:left;gap:10px}.hero-sub{text-align:left;max-width:100%}.hero h1{font-size:clamp(44px,9vw,84px);line-height:1.02;letter-spacing:-.04em;font-weight:700}.section-head{grid-template-columns:1fr}.shift{padding:24vh 0 20vh}.shift-media{margin-top:44px}.thesis{min-height:auto;padding:12vh var(--gutter) 16vh}.thesis-ghost{display:none}.thesis-panel{margin:0;width:100%}.human-media,.role-spine{position:relative;top:auto;bottom:auto;width:100%;height:52vh}.role-spine img{object-position:center 68%}.role-spine:after{background:linear-gradient(180deg,transparent 55%,var(--sage) 96%)}.role-body{margin-left:0;padding:16vh var(--gutter) 20vh}.role-heading-wrap,.role-heading-wrap h2,.role-copy>p{justify-content:flex-start;text-align:left;margin-left:0}.role-item{grid-template-columns:auto 1fr;column-gap:16px;row-gap:6px}.role-item .n{grid-column:1;grid-row:1}.role-item strong{grid-column:2;grid-row:1}.role-item .d{grid-column:1/-1;grid-row:2}.role-item .ghost{display:none}.slide{grid-template-columns:1fr;gap:26px}.slide-visual{aspect-ratio:16/9}.people-card{grid-template-columns:1fr;flex-basis:88%}.people-photo{aspect-ratio:4/5}.people-panel{padding:26px 22px}.footer-grid{grid-template-columns:1fr 1fr}.glass-field{display:block}.glass{width:clamp(150px,27vw,250px)}.thesis-glass{width:145vw;opacity:.58}.hero h1 .hero-media-inline{display:none}.hero h1 span.hero-line{display:block;height:auto}}
 @media(max-width:560px){.hero{min-height:820px}.section-head h2,.role-copy h2,.start h2,.shift h2,.people-head h2{font-size:clamp(35px,5.7vw,89px)}.carousel-pills{gap:8px}.pill{padding:7px 14px 7px 7px}.carousel-controls{flex-wrap:wrap}.footer-grid{grid-template-columns:1fr}.footer-bottom{display:block}.footer-bottom span{display:block;margin-bottom:8px}.glass{width:clamp(115px,29vw,190px)}}
@@ -250,10 +253,10 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
    <section class="hero bg-dark" data-section="FOR MATHEMATICIANS">
     <div aria-hidden="true" class="glass-field hero-glass-field">
      <div class="glass hero-text-glass" style="width:clamp(420px,36.4vw,672px);--x:calc(42% + 90px);--y:calc(69vh + 5px);--dx:18px;--dy:-14px;--r:3deg;--dr:-2deg;--speed:46s">
-      <img alt="" src="theorexpics/glass/(5).webp"/>
+      <img alt="" src="theorexpics/glass/(5).webp" loading="eager" decoding="async"/>
      </div>
      <div class="glass hero-small-glass" style="width:clamp(63px,7.5vw,114px);--x:9%;--y:33.5vh;--dx:18px;--dy:-14px;--r:-4deg;--dr:-2deg;--speed:46s">
-      <img alt="" src="theorexpics/glass/(3).webp"/>
+      <img alt="" src="theorexpics/glass/(3).webp" loading="eager" decoding="async"/>
      </div>
     </div>
     <div class="hero-top reveal">
@@ -280,7 +283,7 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
       <span class="hero-line">
        <span class="hero-word">MATH<span style="letter-spacing:0;display:inline">S</span></span>
        <span class="hero-media-inline" aria-hidden="true">
-        <video autoplay muted playsinline preload="auto" src="theorexpics/theorexvid.mp4"></video>
+        <video muted playsinline preload="none" data-src="theorexpics/theorexvid.mp4"></video>
        </span>
        <span class="hero-word">RESEARCH,</span>
       </span>
@@ -295,7 +298,7 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
    <section class="shift bg-dark" data-section="THE WORK" id="model">
     <div aria-hidden="true" class="glass-field">
      <div class="glass" style="--x:calc(50% - 330px);--y:calc(31% - 50px);--dx:18px;--dy:-14px;--r:4deg;--dr:-2deg;--speed:46s">
-      <img alt="" src="theorexpics/glass/(11).webp"/>
+      <img alt="" src="theorexpics/glass/(11).webp" loading="lazy" decoding="async"/>
      </div>
     </div>
     <div class="container shift-inner">
@@ -316,13 +319,13 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
       </strong>
      </p>
      <div class="shift-media media-frame dark transparent reveal">
-      <video autoplay="" loop="" muted="" playsinline="" poster="theorexpics/theorex-research-model-expansion-poster.webp" src="theorexpics/theorex-research-model-expansion.mp4">
+      <video loop="" muted="" playsinline="" preload="none" poster="theorexpics/theorex-research-model-expansion-poster.webp" data-src="theorexpics/theorex-research-model-expansion.mp4">
       </video>
      </div>
     </div>
    </section>
    <section class="thesis bg-dark" data-section="THE JOB">
-    <img alt="" aria-hidden="true" class="thesis-glass" src="theorexpics/glass/(7).webp"/>
+    <img alt="" aria-hidden="true" class="thesis-glass" src="theorexpics/glass/(7).webp" loading="lazy" decoding="async"/>
     <div aria-hidden="true" class="thesis-ghost reveal">
      RESEARCH NEEDS MANAGEMENT
     </div>
@@ -345,14 +348,14 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
       </strong>
      </p>
      <div class="media-frame dark">
-      <img alt="" src="theorexpics/theorex-human-research-system.webp"/>
+      <img alt="" src="theorexpics/theorex-human-research-system.webp" loading="lazy" decoding="async"/>
      </div>
     </div>
    </section>
    <section class="human" data-section="YOUR MANAGER" id="manager-overview">
     <div aria-hidden="true" class="glass-field">
      <div class="glass" style="width:clamp(216px,19.2vw,324px);--x:calc(10% - 15px);--y:calc(15% + 55px);--dx:18px;--dy:-14px;--r:-5deg;--dr:-2deg;--speed:46s">
-      <img alt="" src="theorexpics/glass/(9).webp"/>
+      <img alt="" src="theorexpics/glass/(9).webp" loading="lazy" decoding="async"/>
      </div>
     </div>
     <div class="container">
@@ -373,19 +376,19 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
       </div>
      </div>
      <div class="human-media media-frame reveal">
-      <img alt="" src="theorexpics/theorex-research-collaboration.webp"/>
+      <img alt="" src="theorexpics/theorex-research-collaboration.webp" loading="lazy" decoding="async"/>
      </div>
     </div>
    </section>
    <section class="role" data-section="THE ROLE" id="manager">
     <div aria-hidden="true" class="glass-field">
      <div class="glass glass-flip" style="width:clamp(273px,26vw,468px);--x:calc(21% + 360px);--y:calc(28% - 55px + 13vh);--dx:18px;--dy:-14px;--r:0deg;--dr:-2deg;--speed:46s">
-      <img alt="" src="theorexpics/glass/(6).webp"/>
+      <img alt="" src="theorexpics/glass/(6).webp" loading="lazy" decoding="async"/>
      </div>
     </div>
     <div class="role-spine reveal-left">
      <div class="media-frame">
-      <img alt="" src="theorexpics/theorex-role-manager-spine.webp"/>
+      <img alt="" src="theorexpics/theorex-role-manager-spine.webp" loading="lazy" decoding="async"/>
      </div>
     </div>
     <div class="role-body">
@@ -468,7 +471,7 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
     </div>
    </section>
    <section class="signal">
-    <img alt="" aria-hidden="true" class="signal-glass" src="theorexpics/glass/(7).webp"/>
+    <img alt="" aria-hidden="true" class="signal-glass" src="theorexpics/glass/(7).webp" loading="lazy" decoding="async"/>
     <div class="container signal-inner reveal">
      <h3>
       HARD PROBLEMS DESERVE SOMEONE WHOSE ONLY JOB IS THE PROBLEM.
@@ -478,7 +481,7 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
    <section class="programme" data-section="HOW IT WORKS" id="programme">
     <div aria-hidden="true" class="glass-field">
      <div class="glass" style="width:clamp(293px,25.9vw,431px);--x:calc(29% - 40px);--y:calc(19% - 20px + 16vh - 40px);--dx:18px;--dy:-14px;--r:0deg;--dr:-2deg;--speed:46s">
-      <img alt="" src="theorexpics/glass/(10).webp"/>
+      <img alt="" src="theorexpics/glass/(10).webp" loading="lazy" decoding="async"/>
      </div>
     </div>
     <div class="container">
@@ -550,7 +553,7 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
           </p>
          </div>
          <div class="slide-visual media-frame">
-          <img alt="" src="theorexpics/theorex-programme-question.webp"/>
+          <img alt="" src="theorexpics/theorex-programme-question.webp" loading="lazy" decoding="async"/>
          </div>
         </article>
         <article class="slide" data-index="1">
@@ -563,7 +566,7 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
           </p>
          </div>
          <div class="slide-visual media-frame">
-          <img alt="" src="theorexpics/theorex-programme-people.webp"/>
+          <img alt="" src="theorexpics/theorex-programme-people.webp" loading="lazy" decoding="async"/>
          </div>
         </article>
         <article class="slide" data-index="2">
@@ -576,7 +579,7 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
           </p>
          </div>
          <div class="slide-visual media-frame">
-          <img alt="" src="theorexpics/theorex-programme-work.webp"/>
+          <img alt="" src="theorexpics/theorex-programme-work.webp" loading="lazy" decoding="async"/>
          </div>
         </article>
         <article class="slide" data-index="3">
@@ -589,7 +592,7 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
           </p>
          </div>
          <div class="slide-visual media-frame">
-          <img alt="" src="theorexpics/theorex-programme-tools.webp"/>
+          <img alt="" src="theorexpics/theorex-programme-tools.webp" loading="lazy" decoding="async"/>
          </div>
         </article>
         <article class="slide" data-index="4">
@@ -602,7 +605,7 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
           </p>
          </div>
          <div class="slide-visual media-frame">
-          <img alt="" src="theorexpics/theorex-programme-next.webp"/>
+          <img alt="" src="theorexpics/theorex-programme-next.webp" loading="lazy" decoding="async"/>
          </div>
         </article>
        </div>
@@ -639,7 +642,7 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
    <section class="people bg-dark" data-section="PEOPLE" id="people">
     <div aria-hidden="true" class="glass-field">
      <div class="glass" style="width:clamp(216px,19.2vw,324px);--x:calc(18% + 25px);--y:calc(18% - 75px + 16vh);--dx:18px;--dy:-14px;--r:-4deg;--dr:-2deg;--speed:46s">
-      <img alt="" src="theorexpics/glass/(13).webp"/>
+      <img alt="" src="theorexpics/glass/(13).webp" loading="lazy" decoding="async"/>
      </div>
     </div>
     <div class="container">
@@ -701,8 +704,8 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
           </p>
          </div>
          <div class="people-photo">
-          <img alt="Portrait of Dr. Elias Marchetti" src="theorexpics/elias-marchetti-portrait.webp"/>
-          <img alt="" aria-hidden="true" class="people-color" src="theorexpics/elias-marchetti-portrait.webp"/>
+          <img alt="Portrait of Dr. Elias Marchetti" src="theorexpics/elias-marchetti-portrait.webp" loading="lazy" decoding="async"/>
+          <img alt="" aria-hidden="true" class="people-color" src="theorexpics/elias-marchetti-portrait.webp" loading="lazy" decoding="async"/>
          </div>
         </article>
         <article class="people-card" data-tone="sage">
@@ -720,8 +723,8 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
           </p>
          </div>
          <div class="people-photo">
-          <img alt="Portrait of Priya Anand" src="theorexpics/priya-anand-portrait.webp"/>
-          <img alt="" aria-hidden="true" class="people-color" src="theorexpics/priya-anand-portrait.webp"/>
+          <img alt="Portrait of Priya Anand" src="theorexpics/priya-anand-portrait.webp" loading="lazy" decoding="async"/>
+          <img alt="" aria-hidden="true" class="people-color" src="theorexpics/priya-anand-portrait.webp" loading="lazy" decoding="async"/>
          </div>
         </article>
         <article class="people-card" data-tone="paper">
@@ -739,8 +742,8 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
           </p>
          </div>
          <div class="people-photo">
-          <img alt="Portrait of Daniel Osei" src="theorexpics/daniel-osei-portrait.webp"/>
-          <img alt="" aria-hidden="true" class="people-color" src="theorexpics/daniel-osei-portrait.webp"/>
+          <img alt="Portrait of Daniel Osei" src="theorexpics/daniel-osei-portrait.webp" loading="lazy" decoding="async"/>
+          <img alt="" aria-hidden="true" class="people-color" src="theorexpics/daniel-osei-portrait.webp" loading="lazy" decoding="async"/>
          </div>
         </article>
        </div>
@@ -751,7 +754,7 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
    <section class="start" data-section="START A CONVERSATION" id="start">
     <div aria-hidden="true" class="glass-field">
      <div class="glass" style="--x:calc(8% + 145px);--y:calc(50% - 100px);--dx:18px;--dy:-14px;--r:6deg;--dr:-2deg;--speed:46s">
-      <img alt="" src="theorexpics/glass/(15).webp"/>
+      <img alt="" src="theorexpics/glass/(15).webp" loading="lazy" decoding="async"/>
      </div>
     </div>
     <div class="container start-center reveal">
@@ -772,13 +775,13 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
       </strong>
      </p>
      <div class="start-actions">
-      <form class="pill-newsletter" id="contactForm" novalidate="">
+      <form class="pill-contact" id="contactForm">
        <span>
         Talk to us
        </span>
-       <span class="pill-newsletter-reveal">
-        <input aria-label="Email address" class="pill-newsletter-input" name="email" placeholder="you@example.com" required="" type="email"/>
-        <button aria-label="Send" class="pill-newsletter-submit" type="submit">
+       <span class="pill-contact-reveal">
+        <input aria-label="Email address" class="pill-contact-input" name="email" placeholder="you@example.com" required="" type="email"/>
+        <button aria-label="Send" class="pill-contact-submit" type="submit">
          <svg aria-hidden="true" viewbox="0 0 20 20">
           <path d="M4 10h11M10.5 5.5 15 10l-4.5 4.5">
           </path>
@@ -859,6 +862,8 @@ html[data-theme="light"] .bg-dark .eyebrow strong{color:var(--ink)}
   <script>
    (()=>{
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const storageGet=key=>{try{return localStorage.getItem(key)}catch(e){return null}};
+const storageSet=(key,value)=>{try{localStorage.setItem(key,value)}catch(e){}};
 
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>io.observe(el));
@@ -911,25 +916,23 @@ const applyTheme=theme=>{
   }
   observeHeaderTheme();
 };
-const savedTheme=localStorage.getItem('theorex-theme');
+const savedTheme=storageGet('theorex-theme');
 const systemPrefersLight=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches;
 applyTheme(savedTheme||(systemPrefersLight?'light':'dark'));
 if(!savedTheme&&window.matchMedia){
   window.matchMedia('(prefers-color-scheme: light)').addEventListener('change',e=>{
-    if(!localStorage.getItem('theorex-theme'))applyTheme(e.matches?'light':'dark');
+    if(!storageGet('theorex-theme'))applyTheme(e.matches?'light':'dark');
   });
 }
 if(themeToggle){
   themeToggle.addEventListener('click',()=>{
     const next=document.documentElement.dataset.theme==='light'?'dark':'light';
-    localStorage.setItem('theorex-theme',next);
+    storageSet('theorex-theme',next);
     applyTheme(next);
   });
 }
 
-/* hero style preference - three states driving both the hero variant and the site-wide drifting
-   glass shapes: video (v1, no ambient glass), glass (v2, default, ambient glass + drifting hero
-   glass), plain (v3, no glass, no video) */
+/* hero style preference - three states: video, glass, and plain. Video is the default. */
 const HERO_STYLES=['video','glass','plain'];
 const heroStyleToggle=document.getElementById('heroStyleToggle');
 const heroStyleOptions=heroStyleToggle?[...heroStyleToggle.querySelectorAll('.control-option')]:[];
@@ -942,41 +945,63 @@ const applyHeroStyle=state=>{
   }
   return next;
 };
-const savedHeroStyle=localStorage.getItem('theorex-hero');
+const savedHeroStyle=storageGet('theorex-hero');
 applyHeroStyle(savedHeroStyle||'video');
 heroStyleOptions.forEach(btn=>{
   btn.addEventListener('click',()=>{
     const next=applyHeroStyle(btn.dataset.value);
-    localStorage.setItem('theorex-hero',next);
-    if(next==='video')startHeroVid();
+    storageSet('theorex-hero',next);
+    if(next==='video')startHeroVid(); else stopHeroVid();
   });
 });
 
-/* hero inline video (shown only in the v1 "video" hero style) - plays forward, then reverses back
-   to the start (scrubbing currentTime), then plays forward again, so the loop never jump-cuts */
+/* hero inline video - lazy-loaded and lifecycle-aware. Video is only loaded/played while the video hero is selected. */
 const heroVid=document.querySelector('.hero-media-inline video');
 let startHeroVid=()=>{};
-if(heroVid&&!reduce){
-  let heroVidStarted=false,lastT=null;
+let stopHeroVid=()=>{};
+if(heroVid){
+  let reverseFrame=0,lastT=null;
+  const loadHeroVideo=()=>{
+    if(heroVid.src)return true;
+    const src=heroVid.dataset.src;
+    if(!src)return false;
+    heroVid.src=src;
+    heroVid.load();
+    return true;
+  };
   const reverseStep=now=>{
+    if(document.documentElement.dataset.hero!=='video'||reduce){reverseFrame=0;lastT=null;return;}
     if(lastT===null)lastT=now;
-    const dt=(now-lastT)/1000;
+    const dt=Math.min((now-lastT)/1000,.05);
     lastT=now;
     heroVid.currentTime=Math.max(0,heroVid.currentTime-dt);
     if(heroVid.currentTime<=0.03){
       lastT=null;
       heroVid.currentTime=0;
-      heroVid.play();
+      heroVid.play().catch(()=>{});
+      reverseFrame=0;
     }else{
-      requestAnimationFrame(reverseStep);
+      reverseFrame=requestAnimationFrame(reverseStep);
     }
   };
   heroVid.addEventListener('ended',()=>{
+    if(document.documentElement.dataset.hero!=='video'||reduce)return;
     heroVid.pause();
     lastT=null;
-    requestAnimationFrame(reverseStep);
+    cancelAnimationFrame(reverseFrame);
+    reverseFrame=requestAnimationFrame(reverseStep);
   });
-  startHeroVid=()=>{if(heroVidStarted)return;heroVidStarted=true;heroVid.play().catch(()=>{});};
+  startHeroVid=()=>{
+    if(reduce||document.documentElement.dataset.hero!=='video')return;
+    if(!loadHeroVideo())return;
+    heroVid.play().catch(()=>{});
+  };
+  stopHeroVid=()=>{
+    cancelAnimationFrame(reverseFrame);
+    reverseFrame=0;
+    lastT=null;
+    heroVid.pause();
+  };
   if(document.documentElement.dataset.hero==='video')startHeroVid();
 }
 
@@ -987,7 +1012,7 @@ if(carousel){
   const slides=[...carousel.querySelectorAll('.slide')];
   const playBtn=carousel.querySelector('[data-play]');
   const arrows=[...carousel.querySelectorAll('.carousel-arrow')];
-  let active=0,timer=null,playing=!reduce;
+  let active=0,timer=null,playing=false;
 
   const render=(i,timed)=>{
     active=(i+slides.length)%slides.length;
@@ -1007,6 +1032,7 @@ if(carousel){
   playBtn.addEventListener('click',()=>playing?stop():start());
 
   render(0);
+  if(reduce){playBtn.classList.add('is-paused');playBtn.setAttribute('aria-label','Resume automatic sequence');}
   const progIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){start();progIO.unobserve(e.target)}}),{threshold:.4});
   progIO.observe(carousel);
 }
@@ -1033,9 +1059,15 @@ if(peopleCarousel){
   const original=[...track.children];
   const total=original.length;
   const before=document.createDocumentFragment();
-  original.forEach(c=>before.appendChild(c.cloneNode(true)));
+  const cloneCard=card=>{
+    const clone=card.cloneNode(true);
+    clone.setAttribute('aria-hidden','true');
+    clone.querySelectorAll('img').forEach(img=>{img.setAttribute('alt','');img.setAttribute('aria-hidden','true');});
+    return clone;
+  };
+  original.forEach(c=>before.appendChild(cloneCard(c)));
   track.insertBefore(before,track.firstChild);
-  original.forEach(c=>track.appendChild(c.cloneNode(true)));
+  original.forEach(c=>track.appendChild(cloneCard(c)));
 
   const pPlay=peopleCarousel.querySelector('[data-play]');
   const pArrows=[...peopleCarousel.querySelectorAll('.carousel-arrow')];
@@ -1068,249 +1100,170 @@ if(peopleCarousel){
 
   place(false);
   if(pIndex)pIndex.textContent='01 / '+String(total).padStart(2,'0');
-  pStart();
+  const peopleIO=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){pStart();}else{pStop();}
+  }),{threshold:.2});
+  peopleIO.observe(peopleCarousel);
 }
 
-/* glass motion: one transform, one element, one animation loop. Dragging never competes with CSS animation.
-
-   Hit-testing: every .glass is pointer-events:none, so by default a click or a text-selection drag passes straight
-   through it to whatever's underneath. Each piece's actual pixels are sampled once into a small alpha map; a single
-   delegated pointerdown on the document checks that map before deciding whether the gesture is "grab the glass" or
-   "let the page handle it normally". Once a drag starts, pointer capture keeps it going regardless of pointer-events. */
+/* glass motion - cached CSS values, visibility-aware animation, and alpha hit-testing only on visible pieces. */
 const glassPieces=[...document.querySelectorAll('.glass-field .glass')];
 if(glassPieces.length&&!reduce){
-  const motion={active:null,pointerId:null,lastTime:performance.now()};
+  const motion={active:null,pointerId:null};
   const dragLayer=document.createElement('div');dragLayer.className='glass-drag-layer';document.body.appendChild(dragLayer);
-  // origin point for every piece's idle drift, so the whole page's ambient motion ramps in on one shared clock
-  // rather than each piece starting mid-cycle
-  const idleMotionStart=performance.now()+500;
   const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
   const easeOutQuint=t=>1-Math.pow(1-t,5);
-  // low threshold on purpose: this is photographic glass, not a flat cutout, so its visible edges and
-  // core fade smoothly rather than snapping from opaque to empty. Grabbing needs to follow that faint
-  // glass all the way to where it's actually gone, or clicks fall through to the text/page underneath.
-  const ALPHA_THRESHOLD=2;
-  const ALPHA_SAMPLE=200;
-
-  const alphaCache=new Map(); // src -> {data,w,h} | 'unavailable' | null(pending)
-  const primeAlpha=src=>{
-    if(alphaCache.has(src))return;
-    alphaCache.set(src,null);
-    const img=new Image();
-    img.onload=()=>{
-      try{
-        const w=ALPHA_SAMPLE,h=Math.max(1,Math.round(w*img.naturalHeight/img.naturalWidth))||w;
-        const c=document.createElement('canvas');
-        c.width=w;c.height=h;
-        const ctx=c.getContext('2d',{willReadFrequently:true});
-        ctx.drawImage(img,0,0,w,h);
-        alphaCache.set(src,{data:ctx.getImageData(0,0,w,h).data,w,h});
-      }catch(err){
-        alphaCache.set(src,'unavailable'); // e.g. blocked by a cross-origin/file:// canvas restriction
-      }
-    };
-    img.onerror=()=>alphaCache.set(src,'unavailable');
-    img.src=src;
-  };
-  // opaque-until-proven-transparent: while a map is still loading (or can't be read), treat the piece as grabbable
-  // everywhere, so dragging never silently breaks - it only gets more precise once the sample is ready.
-  const isOpaqueAt=(piece,u,v)=>{
-    const img=piece.querySelector('img');
-    if(!img)return true;
+  const ALPHA_THRESHOLD=2,ALPHA_SAMPLE=160;
+  const alphaCache=new Map();
+  const primeAlpha=img=>{
     const src=img.currentSrc||img.src;
-    const entry=alphaCache.get(src);
-    if(!entry||entry==='unavailable')return true;
-    const x=clamp(Math.floor(u*entry.w),0,entry.w-1);
-    const y=clamp(Math.floor(v*entry.h),0,entry.h-1);
+    if(!src||alphaCache.has(src))return;
+    if(img.complete&&img.naturalWidth){
+      try{
+        const w=ALPHA_SAMPLE,h=Math.max(1,Math.round(w*img.naturalHeight/img.naturalWidth));
+        const c=document.createElement('canvas');c.width=w;c.height=h;
+        const ctx=c.getContext('2d',{willReadFrequently:true});ctx.drawImage(img,0,0,w,h);
+        alphaCache.set(src,{data:ctx.getImageData(0,0,w,h).data,w,h});
+      }catch(err){alphaCache.set(src,'unavailable');}
+      return;
+    }
+    alphaCache.set(src,null);
+    img.addEventListener('load',()=>{
+      try{
+        const w=ALPHA_SAMPLE,h=Math.max(1,Math.round(w*img.naturalHeight/img.naturalWidth));
+        const c=document.createElement('canvas');c.width=w;c.height=h;
+        const ctx=c.getContext('2d',{willReadFrequently:true});ctx.drawImage(img,0,0,w,h);
+        alphaCache.set(src,{data:ctx.getImageData(0,0,w,h).data,w,h});
+      }catch(err){alphaCache.set(src,'unavailable');}
+    },{once:true});
+    img.addEventListener('error',()=>alphaCache.set(src,'unavailable'),{once:true});
+  };
+  const isOpaqueAt=(piece,u,v)=>{
+    const img=piece.querySelector('img');if(!img)return false;
+    const entry=alphaCache.get(img.currentSrc||img.src);
+    if(!entry||entry==='unavailable')return false;
+    const x=clamp(Math.floor(u*entry.w),0,entry.w-1),y=clamp(Math.floor(v*entry.h),0,entry.h-1);
     return entry.data[(y*entry.w+x)*4+3]>ALPHA_THRESHOLD;
   };
-  // the drag layer is position:fixed (viewport space), but the piece is meant to stay anchored to a point
-  // on the page. If the user scrolls while dragging or while the release glide is still running, we have to
-  // subtract however far the page has moved since the drag began, or the piece just hangs in place on screen
-  // - visibly "sticky" - until the glide finishes and it's reparented back into normal document flow.
   const applyDragPosition=(piece,state)=>{
-    const dx=window.scrollX-state.scrollX;
-    const dy=window.scrollY-state.scrollY;
+    const dx=window.scrollX-state.scrollX,dy=window.scrollY-state.scrollY;
     piece.style.setProperty('--drag-left',`${state.originCenterX+state.x-dx}px`);
     piece.style.setProperty('--drag-top',`${state.originCenterY+state.y-dy}px`);
     piece.style.setProperty('--drag-r',`${state.baseR+state.r}deg`);
   };
   const localPoint=(piece,clientX,clientY)=>{
     const r=piece.getBoundingClientRect();
-    if(r.width<=0||r.height<=0)return null;
-    if(clientX<r.left||clientX>r.right||clientY<r.top||clientY>r.bottom)return null;
+    if(r.width<=0||r.height<=0||clientX<r.left||clientX>r.right||clientY<r.top||clientY>r.bottom)return null;
     return{u:(clientX-r.left)/r.width,v:(clientY-r.top)/r.height};
   };
-
+  const fields=[...new Set(glassPieces.map(p=>p.closest('.glass-field')).filter(Boolean))];
+  const visibleFields=new Set();
+  const fieldIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)visibleFields.add(e.target);else visibleFields.delete(e.target);}),{rootMargin:'120px 0px',threshold:0});
+  fields.forEach(field=>fieldIO.observe(field));
+  const visiblePieces=()=>glassPieces.filter(piece=>visibleFields.has(piece.closest('.glass-field'))||motion.active===piece||piece._glass.returnStart);
   glassPieces.forEach((piece,index)=>{
+    const cs=getComputedStyle(piece);
     piece._glass={
-      x:0,y:0,r:0,
-      // the piece's authored --r (e.g. a 27° or 34° tilt set in its inline style) is a *static* rotation, separate
-      // from the small animated sway r/motion-r drives. The idle/CSS transform adds them together
-      // (rotate(var(--r) + var(--motion-r))), but .is-dragging switches to a single rotate(var(--drag-r)) - so
-      // without baseR folded in here, any piece with a non-zero authored tilt would snap flat the instant it's grabbed.
-      baseR:parseFloat(getComputedStyle(piece).getPropertyValue('--r'))||0,
-      targetX:0,targetY:0,
-      startX:0,startY:0,startR:0,
-      returnStart:0,returnDuration:0,
-      phase:index*1.73,
-      seed:1+(index%5)*.17
+      x:0,y:0,r:0,baseR:parseFloat(cs.getPropertyValue('--r'))||0,
+      driftX:parseFloat(cs.getPropertyValue('--dx'))||0,driftY:parseFloat(cs.getPropertyValue('--dy'))||0,driftR:parseFloat(cs.getPropertyValue('--dr'))||0,
+      speed:parseFloat(cs.getPropertyValue('--speed'))||42,targetX:0,targetY:0,targetR:0,startX:0,startY:0,startR:0,returnStart:0,returnDuration:0,
+      phase:index*1.73,seed:1+(index%5)*.17
     };
-    const img=piece.querySelector('img');
-    if(img)primeAlpha(img.currentSrc||img.src);
+    const img=piece.querySelector('img');if(img)primeAlpha(img);
   });
-
-  // highest z-index first, so overlapping pieces (rare) resolve to the one actually drawn on top
-  const hitOrder=[...glassPieces].sort((a,b)=>
-    (parseFloat(getComputedStyle(b).zIndex)||0)-(parseFloat(getComputedStyle(a).zIndex)||0));
-
-  const startDrag=(piece,e)=>{
-    const state=piece._glass;
+  const hitOrder=[...glassPieces].sort((a,b)=>(parseFloat(getComputedStyle(b).zIndex)||0)-(parseFloat(getComputedStyle(a).zIndex)||0));
+  const hitTest=(x,y)=>hitOrder.some(piece=>{
     const field=piece.closest('.glass-field');
-    if(!field)return;
+    if(!visibleFields.has(field)&&motion.active!==piece)return false;
+    const pt=localPoint(piece,x,y);return pt&&isOpaqueAt(piece,pt.u,pt.v);
+  });
+  const startDrag=(piece,e)=>{
+    const state=piece._glass,field=piece.closest('.glass-field');if(!field)return;
     const bounds=piece.getBoundingClientRect();
-    state.originField=field;
-    state.originNext=piece.nextSibling;
-    state.originCenterX=bounds.left+bounds.width/2;
-    state.originCenterY=bounds.top+bounds.height/2;
-    state.pointerOffsetX=e.clientX-state.originCenterX;
-    state.pointerOffsetY=e.clientY-state.originCenterY;
-    dragLayer.appendChild(piece);
-    piece.classList.add('is-dragging');
-    motion.active=piece;
-    motion.pointerId=e.pointerId;
-    state.targetX=state.x;
-    state.targetY=state.y;
-    state.targetR=state.r;
-    state.scrollX=window.scrollX;
-    state.scrollY=window.scrollY;
-    piece.classList.add('is-grabbed');
-    applyDragPosition(piece,state);
-    document.body.classList.add('glass-dragging');
-    piece.setPointerCapture(e.pointerId);
-    e.preventDefault();
-    e.stopPropagation();
+    state.originField=field;state.originNext=piece.nextSibling;state.originCenterX=bounds.left+bounds.width/2;state.originCenterY=bounds.top+bounds.height/2;
+    state.pointerOffsetX=e.clientX-state.originCenterX;state.pointerOffsetY=e.clientY-state.originCenterY;state.scrollX=window.scrollX;state.scrollY=window.scrollY;
+    dragLayer.appendChild(piece);piece.classList.add('is-dragging');motion.active=piece;motion.pointerId=e.pointerId;
+    state.targetX=state.x;state.targetY=state.y;state.targetR=state.r;piece.classList.add('is-grabbed');applyDragPosition(piece,state);
+    document.body.classList.add('glass-dragging');piece.setPointerCapture(e.pointerId);e.preventDefault();e.stopPropagation();
   };
   document.addEventListener('pointerdown',e=>{
     if(e.pointerType==='mouse'&&e.button!==0)return;
-    for(const piece of hitOrder){
-      const pt=localPoint(piece,e.clientX,e.clientY);
-      if(!pt)continue;
-      if(!isOpaqueAt(piece,pt.u,pt.v))continue;
-      startDrag(piece,e);
-      return;
-    }
+    const piece=hitOrder.find(p=>{const field=p.closest('.glass-field');if(!visibleFields.has(field))return false;const pt=localPoint(p,e.clientX,e.clientY);return pt&&isOpaqueAt(p,pt.u,pt.v);});
+    if(piece)startDrag(piece,e);
   },true);
-
-  // cursor affordance only - gating the actual drag happens above, at pointerdown time
   let hoverRaf=0;
   document.addEventListener('pointermove',e=>{
     if(motion.active||hoverRaf)return;
-    hoverRaf=requestAnimationFrame(()=>{
-      hoverRaf=0;
-      const hit=hitOrder.some(piece=>{
-        const pt=localPoint(piece,e.clientX,e.clientY);
-        return pt&&isOpaqueAt(piece,pt.u,pt.v);
-      });
-      document.body.classList.toggle('glass-hover',hit);
-    });
+    hoverRaf=requestAnimationFrame(()=>{hoverRaf=0;document.body.classList.toggle('glass-hover',hitTest(e.clientX,e.clientY));});
   });
-
   glassPieces.forEach(piece=>{
     piece.addEventListener('pointermove',e=>{
       if(motion.active!==piece||e.pointerId!==motion.pointerId)return;
-      const state=piece._glass;
-      state.targetX=e.clientX-state.pointerOffsetX-state.originCenterX;
-      state.targetY=e.clientY-state.pointerOffsetY-state.originCenterY;
+      const state=piece._glass;state.targetX=e.clientX-state.pointerOffsetX-state.originCenterX;state.targetY=e.clientY-state.pointerOffsetY-state.originCenterY;
       state.targetR=clamp(state.targetX/Math.max(piece.getBoundingClientRect().width,1)*3.5,-5,5);
     });
-
     const release=()=>{
       if(motion.active!==piece)return;
-      const state=piece._glass;
-      motion.active=null;
-      motion.pointerId=null;
-      state.startX=state.x;
-      state.startY=state.y;
-      state.startR=state.r;
-      state.returnStart=performance.now();
-      const distance=Math.hypot(state.startX,state.startY);
-      // twice the previous settle time, so the return reads as unhurried rather than snapping back
-      state.returnDuration=clamp(2200+distance*2.3,2200,4400);
-      state.targetX=state.targetY=state.targetR=0;
-      // stays in the fixed drag layer (still position:fixed, still un-clipped) for the whole glide home -
-      // only reparented back into its section's glass-field once it's actually settled, so it never gets
-      // clipped by that field's overflow:hidden mid-flight
-      piece.classList.remove('is-grabbed');
-      document.body.classList.remove('glass-dragging');
+      const state=piece._glass;motion.active=null;motion.pointerId=null;state.startX=state.x;state.startY=state.y;state.startR=state.r;state.returnStart=performance.now();
+      state.returnDuration=clamp(2200+Math.hypot(state.startX,state.startY)*2.3,2200,4400);state.targetX=state.targetY=state.targetR=0;
+      piece.classList.remove('is-grabbed');document.body.classList.remove('glass-dragging');
     };
-
-    piece.addEventListener('pointerup',release);
-    piece.addEventListener('pointercancel',release);
-    piece.addEventListener('lostpointercapture',release);
+    piece.addEventListener('pointerup',release);piece.addEventListener('pointercancel',release);piece.addEventListener('lostpointercapture',release);
   });
-
+  let raf=0;
   const render=now=>{
-    motion.lastTime=now;
-
-    glassPieces.forEach(piece=>{
+    raf=0;
+    if(document.hidden){return;}
+    const pieces=visiblePieces();
+    pieces.forEach(piece=>{
       const state=piece._glass;
       if(motion.active===piece){
-        state.x+=(state.targetX-state.x)*0.34;
-        state.y+=(state.targetY-state.y)*0.34;
-        state.r+=(state.targetR-state.r)*0.28;
-        applyDragPosition(piece,state);
+        state.x+=(state.targetX-state.x)*.34;state.y+=(state.targetY-state.y)*.34;state.r+=(state.targetR-state.r)*.28;applyDragPosition(piece,state);
       }else if(state.returnStart){
-        const t=clamp((now-state.returnStart)/state.returnDuration,0,1);
-        const eased=easeOutQuint(t);
-        const settle=1-eased;
-        const sway=Math.sin(t*Math.PI)*Math.sin(t*Math.PI*.55)*6;
-        state.x=state.startX*settle;
-        state.y=state.startY*settle;
-        state.r=state.startR*settle+sway*(Math.abs(state.startR)>0.01?Math.sign(state.startR):1);
-        // still riding the fixed drag layer, so keep its fixed-position vars in sync with the glide
-        applyDragPosition(piece,state);
+        const t=clamp((now-state.returnStart)/state.returnDuration,0,1),eased=easeOutQuint(t),settle=1-eased,sway=Math.sin(t*Math.PI)*Math.sin(t*Math.PI*.55)*6;
+        state.x=state.startX*settle;state.y=state.startY*settle;state.r=state.startR*settle+sway*(Math.abs(state.startR)>.01?Math.sign(state.startR):1);applyDragPosition(piece,state);
         if(t>=1){
-          state.x=state.y=state.r=0;
-          state.returnStart=0;
-          // only now, safely back at rest, hand it back to its section's glass-field
-          if(state.originField){
-            state.originField.insertBefore(piece,state.originNext);
-            state.originField=null;
-            state.originNext=null;
-          }
-          piece.classList.remove('is-dragging');
-          piece.style.removeProperty('--drag-left');
-          piece.style.removeProperty('--drag-top');
-          piece.style.removeProperty('--drag-r');
+          state.x=state.y=state.r=0;state.returnStart=0;
+          if(state.originField){state.originField.insertBefore(piece,state.originNext);state.originField=null;state.originNext=null;}
+          piece.classList.remove('is-dragging');piece.style.removeProperty('--drag-left');piece.style.removeProperty('--drag-top');piece.style.removeProperty('--drag-r');
         }
       }else{
-        const seconds=(now-idleMotionStart)/1000;
-        const ramp=Math.max(0,Math.min(1,seconds/1.6)); // eases the drift in over ~1.6s so the page never opens with a pop
-        const baseSpeed=parseFloat(getComputedStyle(piece).getPropertyValue('--speed'))||42;
-        const speed=state.seed/(baseSpeed*1.5);
-        const driftX=parseFloat(getComputedStyle(piece).getPropertyValue('--dx'))||0;
-        const driftY=parseFloat(getComputedStyle(piece).getPropertyValue('--dy'))||0;
-        const driftR=parseFloat(getComputedStyle(piece).getPropertyValue('--dr'))||0;
-        state.x=Math.sin(seconds*speed*2*Math.PI+state.phase)*driftX*.5*ramp;
-        state.y=Math.sin(seconds*speed*2*Math.PI+state.phase+1.1)*driftY*.5*ramp;
-        state.r=Math.sin(seconds*speed*2*Math.PI+state.phase+.7)*driftR*.5*ramp;
+        const seconds=now/1000,ramp=Math.max(0,Math.min(1,(performance.now()-idleMotionStart)/1600));
+        const speed=state.seed/(state.speed*1.5),phase=state.phase;
+        state.x=Math.sin(seconds*speed*2*Math.PI+phase)*state.driftX*.5*ramp;state.y=Math.sin(seconds*speed*2*Math.PI+phase+1.1)*state.driftY*.5*ramp;state.r=Math.sin(seconds*speed*2*Math.PI+phase+.7)*state.driftR*.5*ramp;
       }
-      piece.style.setProperty('--motion-x',`${state.x}px`);
-      piece.style.setProperty('--motion-y',`${state.y}px`);
-      piece.style.setProperty('--motion-r',`${state.r}deg`);
+      piece.style.setProperty('--motion-x',`${state.x}px`);piece.style.setProperty('--motion-y',`${state.y}px`);piece.style.setProperty('--motion-r',`${state.r}deg`);
     });
-
-    requestAnimationFrame(render);
+    if(visibleFields.size||motion.active)raf=requestAnimationFrame(render);
   };
-  requestAnimationFrame(render);
+  const idleMotionStart=performance.now()+500;
+  const wake=()=>{if(!raf&&!document.hidden)raf=requestAnimationFrame(render);};
+  fieldIO.takeRecords();
+  fields.forEach(field=>{if(field.getBoundingClientRect().bottom>0&&field.getBoundingClientRect().top<innerHeight)visibleFields.add(field);});
+  document.addEventListener('visibilitychange',wake);
+  wake();
+}
+
+const lazyVideos=[...document.querySelectorAll('video[data-src]')].filter(v=>!v.closest('.hero-media-inline'));
+if(lazyVideos.length){
+  const videoIO=new IntersectionObserver(es=>es.forEach(e=>{
+    const video=e.target;
+    if(e.isIntersecting){
+      if(!video.src){video.src=video.dataset.src;video.load();}
+      if(!reduce)video.play().catch(()=>{});
+    }else{
+      video.pause();
+    }
+  }),{rootMargin:'240px 0px',threshold:.15});
+  lazyVideos.forEach(video=>videoIO.observe(video));
 }
 
 const contactForm=document.getElementById('contactForm');
 if(contactForm){
   contactForm.addEventListener('submit',e=>{
     e.preventDefault();
-    const input=contactForm.querySelector('.pill-newsletter-input');
+    const input=contactForm.querySelector('.pill-contact-input');
+    if(!input.checkValidity()){input.reportValidity();return;}
     const email=input.value.trim();
     if(!email)return;
     window.location.href='mailto:hello@theorex.org?subject='+encodeURIComponent('Research problem')+'&body='+encodeURIComponent('I would like to talk about a research problem. My email is '+email+'.');
