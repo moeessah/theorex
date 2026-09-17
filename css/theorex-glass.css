@@ -1,0 +1,29 @@
+/* Glass version only. No glass markup or motion engine exists on the other pages.
+   Position is owned by left/top (--x/--y); transform only handles drift, hover and drag.
+   Hit-testing is alpha-based (see theorex-glass.js): each piece is pointer-events:none by
+   default so clicks and text selection pass straight through its transparent padding, and
+   JS grants it pointer-events only over opaque glass pixels. */
+.glass-field{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden}
+.glass-drag-layer{position:fixed;inset:0;z-index:1000;pointer-events:none}
+.glass.is-dragging{position:fixed;left:var(--drag-left);top:var(--drag-top);z-index:1001;transform:translate3d(-50%,-50%,0) rotate(var(--drag-r,0deg));pointer-events:none}
+.glass{position:absolute;left:var(--x);top:var(--y);width:clamp(210px,20vw,360px);will-change:transform;transform:translate3d(calc(-50% + var(--motion-x,0px)),calc(-50% + var(--motion-y,0px)),0) rotate(calc(var(--r) + var(--motion-r,0deg)));touch-action:none;pointer-events:none}
+.glass img{display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none}
+.glass.is-grabbed{z-index:6}
+.glass-field.hero-glass-field{z-index:4}
+.glass.glass-flip img{transform:scaleX(-1)}
+body.glass-hover{cursor:grab}
+body.glass-dragging,body.glass-dragging *{cursor:grabbing!important}
+.thesis-glass{position:absolute;z-index:1;left:54%;top:52%;width:min(96vw,1400px);aspect-ratio:525/321;object-fit:contain;transform:translate(-50%,-50%);opacity:.74;pointer-events:none;animation:thesisGlassDrift 38s ease-in-out infinite alternate}
+.signal-glass{position:absolute;top:0;left:50%;height:100%;width:auto;max-width:none;transform:translateX(calc(-50% + 40px));object-fit:cover;z-index:1;pointer-events:none}
+@keyframes thesisGlassDrift{to{transform:translate(calc(-50% + 30px),calc(-50% - 20px)) rotate(1.2deg)}}
+@media(max-width:900px){
+  .glass-field{display:block}
+  .glass{width:clamp(150px,27vw,250px)}
+  .thesis-glass{width:145vw;opacity:.58}
+}
+@media(max-width:560px){.glass{width:clamp(115px,29vw,190px)}}
+@media(prefers-reduced-motion:reduce){.glass{animation:none!important}.thesis-glass{animation:none!important}}
+/* Glass hero */
+.hero h1.glass-title{font-size:clamp(59px,7.4vw,129px);line-height:.9;letter-spacing:-.07em;max-width:1378px;font-weight:700}
+.glass-title .hero-accent{color:var(--lime)}
+@media(max-width:900px){.hero h1.glass-title{font-size:clamp(44px,9vw,84px);line-height:1.02;letter-spacing:-.04em}}

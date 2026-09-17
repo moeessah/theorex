@@ -1,0 +1,4 @@
+/* Plain hero */
+.hero h1.plain-title{font-size:clamp(59px,7.4vw,129px);line-height:.9;letter-spacing:-.07em;max-width:1378px;font-weight:700}
+.plain-title .hero-accent{color:var(--lime)}
+@media(max-width:900px){.hero h1.plain-title{font-size:clamp(44px,9vw,84px);line-height:1.02;letter-spacing:-.04em}}
