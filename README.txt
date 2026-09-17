@@ -2,8 +2,8 @@ THEOREX SPLIT
 
 Pages
 - index.html = video hero homepage
-- theorex-glass.html = glass version
-- theorex-plain.html = plain version
+- glass.html = glass version
+- plain.html = plain version
 
 Shared assets
 - css/theorex-shared.css = shared site styling + system light/dark theme

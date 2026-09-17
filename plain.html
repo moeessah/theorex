@@ -5,7 +5,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
   <title>
-   Theorex &middot; Research management for mathematicians
+   Theorex &middot; Plain &middot; Research management for mathematicians
   </title>
   <meta content="Theorex provides dedicated research managers for mathematicians. They organise collaborators, specialist expertise and technical work around mathematical research." name="description"/>
   <link href="https://api.fontshare.com" rel="preconnect"/>
@@ -23,7 +23,7 @@
    </defs>
   </svg>
   <link href="css/theorex-shared.css" rel="stylesheet"/>
-  <link href="css/theorex-video.css" rel="stylesheet"/>
+  <link href="css/theorex-plain.css" rel="stylesheet"/>
  </head>
  <body>
   <header class="header" id="siteHeader">
@@ -48,13 +48,13 @@
    <div class="controls-shell" aria-label="Site display controls">
     <div class="hero-style-toggle" role="navigation" aria-label="Hero style">
      <span class="control-indicator" aria-hidden="true"></span>
-     <a class="control-option active" href="index.html" aria-label="Video hero" aria-current="page">
+     <a class="control-option" href="index.html" aria-label="Video hero" aria-current="false">
       <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7.4 5.6v8.8l7-4.4-7-4.4Z"/></svg>
      </a>
      <a class="control-option" href="glass.html" aria-label="Glass hero" aria-current="false">
       <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2.6c3 3.6 5.6 6.6 5.6 9.7A5.6 5.6 0 1 1 4.4 12.3C4.4 9.2 7 6.2 10 2.6Z"/></svg>
      </a>
-     <a class="control-option" href="plain.html" aria-label="Plain hero" aria-current="false">
+     <a class="control-option active" href="plain.html" aria-label="Plain hero" aria-current="page">
       <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4.5" y="4.5" width="11" height="11" rx="2.5"/></svg>
      </a>
     </div>
@@ -87,23 +87,9 @@
      </span>
     </div>
     <div class="hero-inner">
-     <h1 class="reveal video-title">
-      <span class="hero-line">
-       <span class="hero-word">
-        MATH
-        <span style="letter-spacing:0;display:inline">
-         S
-        </span>
-       </span>
-       <span aria-hidden="true" class="hero-media-inline">
-        <video data-src="theorexpics/theorexvid.mp4" muted="" playsinline="" preload="none">
-        </video>
-       </span>
-       <span class="hero-word">
-        RESEARCH,
-       </span>
-      </span>
+     <h1 class="reveal plain-title">
       <span>
+       MATHS RESEARCH,
        <b class="hero-accent">
         MANAGED.
        </b>
@@ -662,8 +648,6 @@
    </div>
   </footer>
   <script src="js/theorex-shared.js">
-  </script>
-  <script src="js/theorex-video.js">
   </script>
  </body>
 </html>
